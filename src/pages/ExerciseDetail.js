@@ -21,8 +21,9 @@ const ExerciseDetail = (props) => {
             const exerciseDetailData = await fetchData(API.exercise + id, exerciseOptions);
             setExerciseDetail(exerciseDetailData);
 
-            const exerciseVideosData = await fetchData(API.youtubeExercises + exerciseDetail.name, youtubeOptions);
+            const exerciseVideosData = await fetchData(API.youtubeExercises + exerciseDetailData.name + 'exercise', youtubeOptions);
             setExerciseVideos(exerciseVideosData.contents);
+            console.log(exerciseVideosData)
 
             const targetExercisesData = await fetchData(API.targetExercises + exerciseDetailData.target, exerciseOptions);
             setTargetExercises(targetExercisesData);

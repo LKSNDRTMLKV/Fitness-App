@@ -36,7 +36,7 @@ const RightArrow = () => {
 
     return (
         <ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow}>
-            {data && data.map((item, idx) => {
+            {data.length && data.map((item, idx) => {
                 return (
                     <Box key={item.id || item}
                         itemId={item.id || item}
@@ -55,7 +55,8 @@ const RightArrow = () => {
                             }}
                         >
                             <img src={Icon} alt="dumbbell" style={{ width: '40px', height: '40px' }} />
-                            <Typography fontSize="24px" fontWeight="bold" fontFamily="Alegreya" color="#3A1212" textTransform="capitalize"> {item}</Typography>
+                            <Typography fontSize="24px" fontWeight="bold" fontFamily="Alegreya" color="#3A1212" textTransform="capitalize" textAlign="center"> {item.name}</Typography>
+                            
                         </Stack>
                     </Box>
                 )
